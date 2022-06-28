@@ -1,0 +1,272 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coded Coders - community of developers</title>
+    <style>
+/* For PC and higher screen ----------------------------------
+Desktop and PC only
+-------------------------------------------------------------*/
+
+    @media (min-width: 768px) {
+
+        body {padding: 7%;
+            background-color: orange;
+            border-top: 25px solid #000;
+            border-bottom: 15px solid #000;
+            margin: 0px;
+        }
+
+        #header { margin: -30px;
+                  font-size: 5em;
+        }
+
+
+        #header-img { width: 30%;
+        }
+
+
+        ul { padding-bottom: 5%;
+        }
+
+        ul#header-1 {
+            text-align: right;
+        }
+        #header-2 {
+            padding-top: 5%;
+        }
+
+    li {
+        display: inline;
+        padding: 8px;
+    }
+
+
+    a {
+        font-family: arial;
+        text-decoration: none;
+        background-color: darkred;
+        color: white;
+        border-radius: 5px;
+        padding: 16px;
+    }
+
+
+    a:hover {
+        font-family: arial;
+        text-decoration: none;
+        background-color: #000;
+        color: white;
+        border-radius: 5px;
+        padding: 12px;
+    }
+
+
+    img:not(.postbtw-img) { border-radius: 2%;
+          border: 5px solid white;
+          box-shadow: 0px 2px 20px;
+    }
+/*--------------------------------------------
+        The site intro text
+----------------------------------------------*/
+
+    #description { text-align: justify;
+                    color: black;
+                    font-size: 30px;
+                    font-family: "arial", sans-serif;
+                    padding-top: 45px;
+    }
+
+    div#space_btw-images { padding-bottom: 10%;
+    }
+    .postbtw-img-1{ width: 50%;
+                  float: center;
+                  border-radius: 6%;
+                  box-shadow: 0px 2px 20px #000;
+    }
+    .postbtw-img-2{ width: 50%;
+                  float: center;
+                  border-radius: 6%;
+                  box-shadow: 0px 2px 20px #000;
+                  padding: 10px;
+                  padding-bottom: 10px;
+    }
+    .postbtw-img-3{ width: 50%;
+                  float: center;
+                  border-radius: 6%;
+                  box-shadow: 0px 2px 20px #000;
+                  padding: 10px;
+                  padding-bottom: 10px;
+    }
+
+
+    section.second-section { padding-top: 35%;
+    }
+       footer { text-align: center;
+             padding-top: 10%;
+             font-weight: bold;
+    }
+
+}
+
+
+/* For Mobile view and smaller screen ----------------------------------
+Tablet and Mobile phones only
+-----------------------------------------------------------------------*/
+
+    @media (max-width: 768px) {
+
+        body {  padding: 5%;
+                background-color: orange;
+                border-top: 25px solid #000;
+                border-bottom: 15px solid #000;
+                margin: 0px;
+                text-align: center;
+        }
+        #header { margin: -10px;
+                  font-size: 50px;
+                  text-align: center;
+
+        }
+        ul { padding-bottom: 5%;
+             padding-top: 5%;
+       }
+        ul#header-1 {
+            text-align: center;
+        }
+        #header-2 {
+            padding-top: 5%;
+        }
+    li {
+        display: inline;
+        padding: 2px;
+    }
+    a {
+        font-family: arial;
+        text-decoration: none;
+        background-color: darkred;
+        color: white;
+        border-radius: 5px;
+        padding: 12px;
+    }
+    a:hover {
+        font-family: arial;
+        text-decoration: none;
+        background-color: #000;
+        color: white;
+        border-radius: 5px;
+        padding: 12px;
+    }
+    hr { background-color: #000;
+         border: 3px solid #000;
+         width: 100%;
+    }
+
+
+    #description { text-align: justify;
+                    color: black;
+                    font-size: 20px;
+                    font-family: "arial", sans-serif;
+                    padding-top: 45px;
+    }
+
+
+    img:not(.postbtw-img) { border-radius: 2%;
+          border: 5px solid white;
+          box-shadow: 0px 2px 20px;
+    }
+    div#space_btw-images { padding-bottom: 10%;
+    }
+    .postbtw-img-1{ width: 80%;
+                  float: center;
+                  border-radius: 6%;
+                  box-shadow: 0px 2px 10px #000;
+    }
+    .postbtw-img-2{ width: 80%;
+                  float: center;
+                  border-radius: 6%;
+                  box-shadow: 0px 2px 10px #000;
+                  padding: 10px;
+                  padding-bottom: 10px;
+    }
+    .postbtw-img-3{ width: 80%;
+                  float: center;
+                  border-radius: 6%;
+                  box-shadow: 0px 2px 10px #000;
+                  padding: 10px;
+                  padding-bottom: 10px;
+    }
+    section.second-section { padding-top: 35%;
+    }
+       footer { text-align: center;
+             padding-top: 10%;
+             font-weight: bold;
+    }
+     #header-img { width: 70%;
+    }
+}
+    </style>
+</head>
+<body>
+<header>
+    <h1 id="header" style="font-family: arial; color:#000;">Coded Coders</h1>
+    <br>
+    <br>
+    <br>
+
+    <br>
+    <label>Coded Coders Search:</label>
+    <input type="search" size="50" value="search...." style="height: 30px;">
+    <ul id="header-1">
+         <li><a href="#">Home</a></li>
+
+        {% if user.is_authenticated %}
+        <li><a href="logout">Logout</a></li>
+        {% else %}
+        <li><a href="login">Sign In</a></li>
+        <li><a href="signup">Create Account</a></li>
+        {% endif %}
+        <li><a href="privacy">Privacy policies</a></li>
+        </ul>
+</header>
+<br>
+<br>
+{% if user.is_authenticated %}
+<h2 style="text-align:justify;">Welcome {{user.username}}! You have successfully logged in</h2>
+{% endif %}
+
+
+<h1 style="text-align: left; float: left; color: #000; font-size: 60px; font-family: sans-serif;" id="header-2">Join the Community of <br><span style="color: #000;">Developers</span> <br>Accross the World</h1>
+<img src="{% static 'assets\img\hero-img.png' %}" style="padding-left: 30px; margin-left: 80px;" id="header-img">
+
+<!------ The site intro text goes here....... ----->
+
+<p id="description">Coded Coders is a community of software developers/engineers ranging from Web Developers, Mobile app Developers, Data Scientists, Data Analysts, Machine Learners, etc. The goal of Coded Coders is to bring together developers accross the world who can contribute to open source projects, grow with other developers and get access to world top job opportunities</p>
+<br>
+<br>
+<center>
+<div id="space_btw-images">
+<img src="{% static 'assets\img\about.jpg' %}"  class="postbtw-img-1">
+</div>
+<img src="{% static 'assets\img\dev.jpg' %}"  class="postbtw-img-2">
+<div id="space_btw-images"></div>
+<img src="{% static 'assets\img\devs.jpg' %}" class="postbtw-img-3">
+</center>
+
+<!-- Second section starts here.... -->
+<section class="second-section">
+<h2> Over 2 Millions Developers have enrolled</h2>
+<br>
+<img src="{% static 'assets\img\devs-2.jpg' %}" width="40%">
+<br>
+<br >
+<h2> Join and contribute to open source. Ask questions and receive answers from your fellow developers across the whole world</h2>
+<img src="{% static 'assets\img\features-3.png' %}" width="40%">
+</section>
+<p style="text-align: right;"><a href="#header">Back to top</a></p>
+
+<!--- footer goes here... ----->
+<footer>&copy Copyright Coded Coders 2022. All Rights Reserved.</footer>
+</body>
+</html>
